@@ -1,31 +1,300 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: #111;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    color: var(--bs-secondary-color);
+    text-align: end;
 }
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
+
+@font-face {
+    font-family: Nabana;
+    src: url(./Nabana-ShadowBold\ -\ DEMO.ttf);
+}
+
+@font-face {
+    font-family: NabanaNormal;
+    src: url(./Nabana.ttf);
+}
+
+@font-face {
+    font-family: 'Nabana';
+    src: url('./Fonts/Nabana.ttf');
+}
+
+/* CSS DO HEADER - HOME USER - INICIO */
+
+/* Logo com posição absoluta */
+
+.bg-mix {
+    background-color: #fed83c;
+}
+
+.ms-text-mix {
+    margin-left: 18rem;
+}
+
+.mb-header-logo {
+    width: 17rem;
+    max-width: 100%;
+    transition: transform 0.6s ease;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    z-index: 1;
+}
+
+    .mb-header-logo:hover {
+        transform: scale(1.1);
+    }
+
+/* Container de texto ao lado da logo */
+.mb-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.375rem; /* 22px */
+    font-family: Nabana;
+}
+
+/* Ícone de pessoa */
+.mb-icon-person {
+    font-size: 4rem;
+    color: #222;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+    .mb-icon-person:hover {
+        transform: scale(1.1);
+    }
+
+/* Ícone de sacola */
+.mb-icon-bag {
+    font-size: 3rem;
+    color: #222;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+    .mb-icon-bag:hover {
+        transform: scale(1.1);
+    }
+
+/* CSS DO HEADER - HOME USER - FIM */
+
+/* CSS DO FOOTER - HOME USER - INICIO */
+
+/* Estilo personalizado para botão do footer */
+.mb-footer-btn {
+    background-color: #111111;
+    color: #fed83c;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: transform 0.6s ease;
+    font-family: Nabana;
+}
+
+    .mb-footer-btn:hover {
+        transform: scale(1.1);
+        background-color: #111111;
+        color: #fed83c;
+    }
+
+/* Ícones sociais do footer */
+.iconsFooter {
+    color: #111111;
+    transition: transform 0.6s ease;
+    font-size: 2rem;
+}
+
+    .iconsFooter:hover {
+        transform: scale(1.1);
+    }
+
+/* Links do LinkedIn no final do rodapé */
+.linkedin {
+    color: #111111;
+    text-decoration: none;
+    transition: transform 0.6s ease;
+}
+
+    .linkedin:hover {
+        transform: scale(1.1);
+    }
+
+/* Texto da esquerda do rodapé */
+.mb-footer-left {
+    font-family: Nabana;
+    font-size: 1rem;
+}
+
+/* Texto da direita do rodapé */
+.mb-footer-right {
+    font-family: Nabana;
+    font-size: 1rem;
+}
+
+/* Ícones sociais (alinhamento extra) */
+.mb-footer-icons {
+    font-family: Nabana;
+}
+
+/* CSS DO FOOTER - HOME USER - FIM */
+
+/* CSS DO MAIN - HOME USER - INICIO */
+
+.pai {
+    height: 69vh;
+    background: url("https://cdn.goomer.com.br/website/base/fe1/31d/7f5/jonathan-borba-8l8yl2ruusg-unsplash-scaled.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+    .pai::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+
+.btn-cardapio {
+    background-color: #fed83c;
+    color: #111111;
+    border: none;
+    width: 25rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-family: NabanaNormal;
+    transition: transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+    .btn-cardapio:hover {
+        transform: scale(1.1);
+        background-color: #fed83c;
+        color: #111111;
+    }
+
+.logo-barra {
+    width: 13rem;
+    margin-top: -3rem;
+}
+
+.foto {
+    width: 100%;
+    max-width: 34rem;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .foto:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+.texto-quem .texto {
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 1.6;
+    font-family: Nabana;
+}
+
+.quem-somos {
+    font-size: 2.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.mais-imgs-videos {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+    .mais-imgs-videos:hover {
+        transform: scale(1.1);
+    }
+
+.videosmais {
+    background-size: cover;
+    background-position: center;
+    width: 15rem;
+    height: 15rem;
+    transition: transform 0.3s ease;
+}
+
+    .videosmais i {
+        font-size: 7rem;
+        color: #111;
+    }
+
+    .videosmais:hover {
+        transform: scale(1.1);
+    }
+
+.textos{
+    font-family: Nabana;
+}
+
+.text-mix {
+    color: #fed83c;
+}
+
+.quem {
+    width: 100%;
+    background: url("https://invexo.com.br/blog/wp-content/uploads/2021/06/Hamburgueria-da-Alf%C3%A2ndega-Ipanema.jpg") no-repeat center center/cover;
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    background-attachment: fixed;
+    margin-top: 0rem;
+}
+
+    /* Estilo do overlay na seção "quem somos" */
+    .quem::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+
+/* CSS DO MAIN - HOME USER - FIM */

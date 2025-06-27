@@ -8,38 +8,64 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/mix_burguer_full.styles.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">mix_burguer_full</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <header class="sticky-top bg-mix shadow-sm py-4 px-5 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-4 position-relative">
+            <a href="./index.html">
+                <img src="./IMGS/Logo.png" alt="Logo" class="mb-header-logo" />
+            </a>
+            <div class="mb-text ms-text-mix">
+                <h1 class="h2 fw-bold text-dark">Mix Burguer</h1>
+                <h2 class="h5 fw-semibold text-dark mt-n2">Hamburgueria</h2>
             </div>
-        </nav>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <i class="bi bi-person-fill mb-icon-person" onclick="btnPerfil()"></i>
+            <i class="bi bi-bag-fill mb-icon-bag" onclick="btnSacola()"></i>
+        </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div>
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - mix_burguer_full - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="mt-5">
+        <div class="bg-mix text-dark py-4 px-5 d-flex justify-content-between align-items-end flex-wrap gap-4">
+            <div class="mb-footer-left">
+                <a href="https://wa.me/+5511933878825" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
+                <span>Mix Burguer 2021 - Todos os Direitos Reservados</span><br />
+                <span>Privacidade</span>
+            </div>
+
+            <div class="d-flex gap-5">
+                <button onclick="irSugestão()" class="btn mb-footer-btn">Fazer uma Sugestão</button>
+                <a href="https://www.facebook.com/people/Mix-Burguer/100088986305599/" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
+                <a href="https://wa.me/+5511933878825" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://www.instagram.com/mixburguer_itupeva/" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
+            </div>
+
+            <div class="mb-footer-right text-end">
+                <span>Site feito por:</span>
+                <div class="mt-2">
+                    <a class="linkedin d-inline-block me-3" href="https://www.linkedin.com/in/ot%C3%A1vio-augusto-palermo-do-vale-161b32351" target="_blank">
+                        Otávio Vale <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a class="linkedin d-inline-block" href="https://www.linkedin.com/in/matheus-borborema-44bb39351/" target="_blank">
+                        Matheus Borborema <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+                <div class="mt-2">
+                    Mikael Amaral <i class="bi bi-linkedin"></i>
+                    Samuel Theodore <i class="bi bi-linkedin"></i>
+                    <a class="linkedin d-inline-block" href="https://www.linkedin.com/in/bryan-felipe-27a7ba356" target="_blank">
+                        Bryan Felipe <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
