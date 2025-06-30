@@ -3,31 +3,31 @@
 }
 
 <!-- Seção principal com background -->
-<div class="pai d-flex flex-column justify-content-center text-start position-relative overflow-hidden w-100">
-    <div class="textos ps-5 position-relative z-1 text-white">
-        <h1 class="mix">MIX BURGER</h1>
+<div class="container-dad d-flex flex-column justify-content-center text-start position-relative overflow-hidden w-100">
+    <div class="texts ps-5 position-relative z-1 text-white">
+        <h1 class="text-mix-burguer">MIX BURGUER</h1>
         <h1 class="text-mix">BURGER <br /> DE VERDADE</h1>
-        <h1 class="chega">Chega rapidinho para matar sua fome!</h1>
-        <button class="btn btn-cardapio" onclick="btnCardapio()">Fazer Pedido</button>
+        <h1 class="text-chega">Chega rapidinho para matar sua fome!</h1>
+        <button class="btn btn-menu" onclick="btnCardapio()">Fazer Pedido</button>
     </div>
 </div>
 
 <!-- Barra com logo -->
-<div class="bg-mix d-flex justify-content-center position-relative py-5">
-    <img class="logo-barra position-absolute top-50 start-50 translate-middle" src="./IMGS/Logo.png" alt="Logo" />
+<div class="bar bg-mix d-flex justify-content-center position-relative py-5">
+    <img class="slash-logo position-absolute top-50 start-50 translate-middle" src="./IMGS/Logo.png" alt="Logo" />
 </div>
 
 <!-- Seção "Quem Somos" -->
-<section class="quem position-relative text-white text-center py-5">
+<section class="container-who position-relative text-white text-center py-5">
     <div class="container position-relative z-1">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <img class="img-fluid rounded foto" src="./IMGS/b29db971-6900-4316-813c-44d05d1df442.jpeg" alt="Foto da hamburgueria" />
+                <img class="img-fluid rounded photo" src="./IMGS/b29db971-6900-4316-813c-44d05d1df442.jpeg" alt="Foto da hamburgueria" />
             </div>
-            <div class="col-lg-6">
-                <div class="texto-quem p-5 rounded-5 bg-black bg-opacity-75 text-start">
-                    <h1 class="quem-somos">Quem Somos</h1>
-                    <p class="texto">
+            <div class="conatiner-we-are col-lg-6">
+                <div class="text-who p-5 rounded-5 bg-black bg-opacity-75 text-start">
+                    <h1 class="who-we-are">Quem Somos</h1>
+                    <p class="text-biografia">
                         A Mix Burguer nasceu com um propósito claro: oferecer hambúrgueres artesanais de qualidade, preparados com ingredientes frescos e saborosos. <br>
                         Localizada em Itupeva-SP, nossa hamburgueria é sinônimo de paixão pela gastronomia e compromisso com a satisfação de cada cliente. <br>
                         Acreditamos que um bom hambúrguer vai além do sabor, é sobre experiência, atendimento e dedicação em cada detalhe. <br>
@@ -42,46 +42,29 @@
 </section>
 
 <!-- Seção Mais+ -->
-<section class="mais text-center py-5">
-    <h1 class="quem-somos">Mais+</h1>
-
-    <div class="container">
-        <div class="row justify-content-center g-4">
-            <!-- Linha 1 -->
-            <div class="col-6 col-md-3 position-relative">
-                <a href="https://www.instagram.com/reel/C6gsvhnOR7t/" target="_blank" class="videosmais d-flex align-items-center justify-content-center">
-                    <i class="bi bi-play-fill"></i>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <img class="img-fluid rounded mais-imgs-videos" src="https://firebasestorage.googleapis.com/...1.webp" />
-            </div>
-            <div class="col-6 col-md-3 position-relative">
-                <a href="https://www.instagram.com/mixburguer_itupeva/reel/C9YXiy-xXj1/" target="_blank" class="videosmais d-flex align-items-center justify-content-center">
-                    <i class="bi bi-play-fill"></i>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <img class="img-fluid rounded mais-imgs-videos" src="https://firebasestorage.googleapis.com/...2.webp" />
-            </div>
-
-            <!-- Linha 2 -->
-            <div class="col-6 col-md-3 position-relative">
-                <a href="https://www.instagram.com/mixburguer_itupeva/reel/DFOSAUWhmYR/" target="_blank" class="videosmais d-flex align-items-center justify-content-center">
-                    <i class="bi bi-play-fill"></i>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <img class="img-fluid rounded mais-imgs-videos" src="https://firebasestorage.googleapis.com/...3.webp" />
-            </div>
-            <div class="col-6 col-md-3 position-relative">
-                <a href="https://www.instagram.com/mixburguer_itupeva/reel/DEGWWWuBrcO/" target="_blank" class="videosmais d-flex align-items-center justify-content-center">
-                    <i class="bi bi-play-fill"></i>
-                </a>
-            </div>
-            <div class="col-6 col-md-3">
-                <img class="img-fluid rounded mais-imgs-videos" src="https://firebasestorage.googleapis.com/...4.webp" />
-            </div>
+<section class="more">
+    <h1 class="who-we-are">Mais+</h1>
+        <!-- Linha 1 -->
+        <div class="imgs-more">
+            <a href="https://www.instagram.com/reel/C6gsvhnOR7t/" target="_blank" class="more-videos1">
+                <i class="bi bi-play-fill"></i>
+            </a>
+            <img class="more-imgs-videos" src="~/IMGS/hamburguer-artesanal-scaled.jpg" />
+            <a href="https://www.instagram.com/mixburguer_itupeva/reel/C9YXiy-xXj1/" target="_blank" class="more-videos2">
+                <i class="bi bi-play-fill"></i>
+            </a>
+            <img class="more-imgs-videos" src="~/IMGS/hamburguer-artesanal-scaled.jpg" />
         </div>
-    </div>
+
+        <!-- Linha 2 -->
+        <div class="imgs-more">
+            <a href="https://www.instagram.com/mixburguer_itupeva/reel/DFOSAUWhmYR/" target="_blank" class="more-videos3">
+                <i class="bi bi-play-fill"></i>
+            </a>
+            <img class="more-imgs-videos" src="~/IMGS/hamburguer-artesanal-scaled.jpg" />
+            <a href="https://www.instagram.com/mixburguer_itupeva/reel/DEGWWWuBrcO/" target="_blank" class="more-videos4">
+                <i class="bi bi-play-fill"></i>
+            </a>
+            <img class="more-imgs-videos" src="~/IMGS/hamburguer-artesanal-scaled.jpg" />
+        </div>
 </section>
