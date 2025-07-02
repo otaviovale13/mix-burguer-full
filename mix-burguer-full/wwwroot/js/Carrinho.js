@@ -155,10 +155,23 @@ function atualizarFormaEntrega() {
 }
 
 function buscarEndereco() {
-    const cep = document.getElementById('cep').value;
+    const cep = document.getElementById('cep').value.replace(/\D/g, '');
     if (cep.length === 8) {
-        // Simulação de busca de endereço
-        document.getElementById('rua').value = "Rua Exemplo";
+        fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.erro) {
+                    document.getElementById('rua').value = data.logradouro || '';
+                    // Você pode adicionar mais campos se quiser (bairro, cidade, etc)
+                } else {
+                    document.getElementById('rua').value = '';
+                }
+            })
+            .catch(() => {
+                document.getElementById('rua').value = '';
+            });
+    } else {
+        document.getElementById('rua').value = '';
     }
 }
 
