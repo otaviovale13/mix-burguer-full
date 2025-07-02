@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix Burguer | Carrinho</title>
+    <link rel="stylesheet" href="./CSS/carrinho.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="d-flex flex-column align-items-center py-3">
+        <div class="imgLogo mb-2">
+            <a href="./index.html">
+                <img class="logo" src="./IMGS/logo mix burguer.png" alt="">
+            </a>
+        </div>
+        <h1 class="text-white">Meu Carrinho</h1>
+    </nav>
+    <main class="container d-flex flex-column align-items-center">
+        <div id="produtos" class="w-100"></div>
+        <div id="total" class="total my-3"></div>
+        <div class="btns d-flex gap-3 my-2">
+            <button class="btnCardapio btn" id="btnFinalizar">Finalizar Pedido!</button>
+            <button class="btnCardapio btn" onclick="btnVoltar()">Voltar!</button>
+        </div>
+        <div id="popupPagamento" class="modal d-flex align-items-center justify-content-center" tabindex="-1" style="display:none;">
+            <div id="popupContent" class="modal-dialog modal-dialog-centered" style="max-height: 90vh; overflow-y: auto;">
+                <div id="paiPagamento" class="modal-content p-3">
+                    <div id="caixaPreta">
+                        <div id="DetalhesdoPagamento" class="mb-3">
+                            <p class="fs-4 fw-bold">Detalhes do Pagamento</p>
+                        </div>
+                        <div id="ItensDoCarrinho" class="mb-2" style="display: none;"></div>
+                        <div class="d-flex gap-2 mb-2">
+                            <button type="button" id="btnMostrarItens" class="btn btn-dark" onclick="mostrarItens()">Mostrar Itens</button>
+                            <button type="button" id="btnEsconderItens" class="btn btn-dark" onclick="esconderItens()" style="display: none;">Esconder Itens</button>
+                        </div>
+                        <div id="FormadeEntrega" class="mb-3">
+                            <div id="filhoDoPai">
+                                <p id="textoEntrega" class="fw-bold">Forma de Entrega:</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="formaEntrega" value="casa" onclick="atualizarFormaEntrega()" id="entregaCasa">
+                                    <label class="form-check-label" for="entregaCasa">Receber em casa</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="formaEntrega" value="loja" onclick="atualizarFormaEntrega()" id="entregaLoja">
+                                    <label class="form-check-label" for="entregaLoja">Retirar na loja</label>
+                                </div>
+                                <div id="enderecoEntrega" class="mt-2" style="display: none;">
+                                    <p id="enderecoPagamento" class="mb-1">Endereço:</p>
+                                    <input type="text" id="cep" class="form-control mb-1" placeholder="CEP" oninput="buscarEndereco()" />
+                                    <input type="text" id="rua" class="form-control mb-1" placeholder="Rua" readonly />
+                                    <input type="text" id="numero" class="form-control mb-1" placeholder="Número" />
+                                    <input type="text" id="complemento" class="form-control mb-1" placeholder="Complemento" />
+                                </div>
+                            </div>
+                        </div>
+                        <div id="FormasdePagamento" class="mb-3">
+                            <p id="FormasdePagamentoTexto" class="fw-bold">Formas de Pagamento</p>
+                            <div id="TipoPagamento" class="mb-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tipoPagamento" value="online" onclick="atualizarOpcoesPagamento()" id="pagOnline">
+                                    <label class="form-check-label" for="pagOnline">Online</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tipoPagamento" value="entrega" onclick="atualizarOpcoesPagamento()" id="pagEntrega">
+                                    <label class="form-check-label" for="pagEntrega">Na Entrega</label>
+                                </div>
+                            </div>
+                            <div id="PagamentoOpcoes" class="d-flex flex-wrap gap-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pagamento" value="pix" id="pagPix">
+                                    <label class="form-check-label" for="pagPix">Pix</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pagamento" value="credito" id="pagCredito">
+                                    <label class="form-check-label" for="pagCredito">Crédito</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pagamento" value="debito" id="pagDebito">
+                                    <label class="form-check-label" for="pagDebito">Débito</label>
+                                </div>
+                                <div class="form-check" id="opcaoDinheiro">
+                                    <input class="form-check-input" type="radio" name="pagamento" value="dinheiro" id="pagDinheiro">
+                                    <label class="form-check-label" for="pagDinheiro">Dinheiro</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ValorTotalPagamento" class="mb-3">
+                            <p id="frete" style="display: none;">Frete: +R$ 10,00</p>
+                            <p id="descontoMensagem" style="display: none;"></p>
+                            <p>Total: R$ <span id="PrecoReal">00,00</span></p>
+                        </div>
+                        <div id="FinalizarPagamento" class="d-flex flex-column align-items-center gap-2">
+                            <button type="button" id="btnAplicarCupom" class="btn btn-dark" onclick="mostrarInputCupom()">Aplicar Cupons</button>
+                            <input type="text" id="cupomDesconto" class="form-control" placeholder="Insira seu cupom de desconto" style="display: none; max-width: 300px;" />
+                            <button type="button" id="btnCancelarCupom" class="btn btn-secondary" onclick="cancelarCupom()" style="display: none;">Cancelar</button>
+                            <div class="d-flex justify-content-center gap-2 mt-2">
+                                <button type="button" id="btnFinalizarPagamento" class="btn btn-success" onclick="FinalizarPagamento()">Finalizar Pagamento</button>
+                                <button type="button" id="VoltarPagamento" class="btn btn-outline-dark" onclick="fecharPopup()">Voltar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./JS/Carrinho.js"></script>
+</body>
+</
