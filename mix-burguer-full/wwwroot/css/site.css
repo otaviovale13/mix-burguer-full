@@ -416,6 +416,186 @@ body {
 
 /* CSS DO MAIN - HOME USER - FIM */
 
+/* CSS DO MAIN - ADM USER - INICIO */
+
+.custom-font-nabana {
+    font-family: 'Nabana', sans-serif;
+}
+
+.custom-contato {
+    transition: transform 0.3s ease-in-out;
+}
+
+    .custom-contato:hover {
+        transform: translateY(-5px);
+    }
+
+.popUpsAdicionar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popUpEdit {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    gap: 1rem;
+    border: none;
+    width: 35rem;
+    input
+
+{
+    text-align: center;
+    color: #000000;
+    border: solid 1px #000000;
+}
+
+.btnLink {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-family: NabanaNormal;
+}
+
+input{
+    width: 10rem;
+}
+
+}
+
+.btnsSalvar {
+    display: flex;
+    gap: 2rem;
+    font-family: NabanaNormal;
+}
+
+.btnsInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-family: NabanaNormal;
+}
+
+.imgPreview {
+    width: 5rem;
+}
+
+.inputNovaDescricao {
+    width: 20rem;
+}
+
+.adicionaisMenuLanche {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.adicionais {
+    color: #000000;
+    font-size: 1.5rem;
+    img
+
+{
+    width: 5rem;
+}
+
+}
+
+.descricaoCarrinho {
+    width: 1rem;
+}
+
+.removeAdicional {
+    background-color: red;
+}
+
+/* Estilo dos botões do cardápio */
+.btnCardapioAriel {
+    background-color: #fed83c;
+    color: #000000;
+    border: none;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-family: NabanaNormal;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+    .btnCardapioAriel:hover {
+        transform: scale(1.1);
+    }
+
+.mensagem {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-family: Nabana;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.alerts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.alert {
+    background-color: #000000;
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+    border-radius: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    font-family: Nabana;
+    color: white;
+    p
+
+{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+}
+
+/* CSS DO MAIN - ADM USER - FIM */
+
 /* CSS RESPONSIVO - INICIO */
 
 @media (max-width: 1400px) {

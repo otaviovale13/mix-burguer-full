@@ -18,6 +18,11 @@ namespace mix_burguer_full.Controllers
             return View();
         }
 
+        public IActionResult AdmIndex()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

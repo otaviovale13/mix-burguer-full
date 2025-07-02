@@ -2,13 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
+@{
+    ViewData["LayoutType"] = "A";
+}
+
 <!-- Seção principal com background -->
 <div class="container-dad d-flex flex-column justify-content-center text-start position-relative overflow-hidden w-100">
     <div class="texts ps-5 position-relative z-1 text-white">
         <h1 class="text-mix-burguer">MIX BURGUER</h1>
         <h1 class="text-mix">BURGER <br /> DE VERDADE</h1>
         <h1 class="text-chega">Chega rapidinho para matar sua fome!</h1>
-        <button class="btn btn-menu" onclick="btnCardapio()">Fazer Pedido</button>
+        <button class="btn-menu" onclick="btnCardapio()">Fazer Pedido</button>
     </div>
 </div>
 

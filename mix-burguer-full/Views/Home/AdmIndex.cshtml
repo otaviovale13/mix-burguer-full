@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Adm Page";
+}
+
+@{
+    ViewData["LayoutType"] = "B";
+}
+
+<!-- Seção principal com background -->
+<div class="container-dad d-flex flex-column justify-content-center text-start position-relative overflow-hidden w-100">
+    <div class="texts ps-5 position-relative z-1 text-white">
+        <h1 class="text-mix-burguer">Bem - Vindo --- Adiministrador</h1>
+        <button class="btn-menu" onclick="btnCardapio()">Ir para o Cardápio</button>
+    </div>
+</div>
+
+<div class="bg-mix py-5 custom-font-nabana">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12">
+                <h1 class="text-dark fs-2 custom-text-shadow">Contatos</h1>
+            </div>
+        </div>
+
+        <div class="row mt-4 d-flex justify-content-between align-items-start text-start">
+            <!-- Coluna esquerda -->
+            <div class="col-12 col-md-4 d-flex flex-column gap-4 align-items-start">
+                <a id="whatsLink" href="https://wa.me/+5511933878825" target="_blank" class="text-decoration-none w-100">
+                    <div class="d-flex align-items-center gap-3 custom-contato text-secondary">
+                        <i class="bi bi-whatsapp fs-1 text-dark"></i>
+                        <h2 id="whats" class="fs-6 mb-0 custom-text-shadow">+55 11 97360-5684</h2>
+                    </div>
+                </a>
+                <a id="instaLink" href="https://www.instagram.com/mixburguer_itupeva/" target="_blank" class="text-decoration-none w-100">
+                    <div class="d-flex align-items-center gap-3 custom-contato text-secondary">
+                        <i class="bi bi-instagram fs-1 text-dark"></i>
+                        <h2 id="insta" class="fs-6 mb-0 custom-text-shadow">mixburger_itupeva</h2>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Coluna centro vazia para o título centralizar corretamente -->
+            <div class="col-12 col-md-4 d-none d-md-block"></div>
+
+            <!-- Coluna direita -->
+            <div class="col-12 col-md-4 d-flex flex-column gap-4 align-items-end">
+                <a id="teleLink" href="tel:+5511933878825" target="_blank" class="text-decoration-none w-100">
+                    <div class="d-flex justify-content-end align-items-center gap-3 custom-contato text-secondary">
+                        <i class="bi bi-telephone-fill fs-1 text-dark"></i>
+                        <h2 id="tele" class="fs-6 mb-0 custom-text-shadow">(11) 93387-8825</h2>
+                    </div>
+                </a>
+                <a id="faceLink" href="https://www.facebook.com/people/Mix-Burguer/100088986305599/" target="_blank" class="text-decoration-none w-100">
+                    <div class="d-flex justify-content-end align-items-center gap-3 custom-contato text-secondary">
+                        <i class="bi bi-facebook fs-1 text-dark"></i>
+                        <h2 id="face" class="fs-6 mb-0 custom-text-shadow">Mix Burguer</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Botão para trocar redes -->
+<div class="text-center mt-4">
+    <button class="btn-menu" onclick="trocarRede()">Trocar Redes Sociais</button>
+</div>
+
+<!-- Seção Mais+ -->
+<section class="more">
+    <h1 class="who-we-are">Mais+</h1>
+    <!-- Linha 1 -->
+    <div class="imgs-more">
+        <a id="videosmais1" href="https://www.instagram.com/reel/C6gsvhnOR7t/" target="_blank" class="more-videos1">
+            <i class="bi bi-play-fill"></i>
+        </a>
+        <img id="foto1" class="more-imgs-videos" src="~/IMGS/hamburguer-artesanal-scaled.jpg" />
+        <a id="videosmais2" href="https://www.instagram.com/mixburguer_itupeva/reel/C9YXiy-xXj1/" target="_blank" class="more-videos2">
+            <i class="bi bi-play-fill"></i>
+        </a>
+        <img id="foto2" class="more-imgs-videos" src="~/IMGS/hamburguer-artesanal-scaled.jpg" />
+    </div>
+
+    <!-- Linha 2 -->
+    <div class="imgs-more">
+        <a id="videosmais3" href="https://www.instagram.com/mixburguer_itupeva/reel/DFOSAUWhmYR/" target="_blank" class="more-videos3">
+            <i class="bi bi-play-fill"></i>
+        </a>
+        <img id="foto3" class="more-imgs-videos" src="~/IMGS/hamburguer-artesanal-scaled.jpg" />
+        <a id="videosmais4" href="https://www.instagram.com/mixburguer_itupeva/reel/DEGWWWuBrcO/" target="_blank" class="more-videos4">
+            <i class="bi bi-play-fill"></i>
+        </a>
+        <img id="foto4" class="more-imgs-videos" src="~/IMGS/hamburguer-artesanal-scaled.jpg" />
+    </div>
+</section>
+
+<div class="text-center mt-4">
+    <button class="btn-menu" onclick="trocarVideoEImagem()">Trocar Vídeos e Fotos</button>
+</div>
+
+<div class="popUpsAdicionar"></div>
+
+<div class="alerts"></div>
