@@ -30,6 +30,23 @@ body {
     text-align: start;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto; /* Ocupa o espaço restante */
+    min-height: 65vh;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600&display=swap");
 
 @font-face {
@@ -189,16 +206,22 @@ body {
     }
 
 .btn-menu {
+    display: inline-block;
     background-color: #fed83c;
     color: #111111;
     border: none;
     width: 25rem;
     height: 3rem;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: NabanaNormal;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     margin-top: 1rem;
+    /* Adicione isso para centralizar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove sublinhado do <a> */
 }
 
     .btn-menu:hover {
@@ -596,11 +619,375 @@ input{
 
 /* CSS DO MAIN - ADM USER - FIM */
 
+/* CSS DO HEADER - CARDAPIO USER - INICIO */
+
+.mb-busca {
+    background-color: #111111;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.mb-input-busca {
+    background-color: transparent;
+    font-size: 1rem;
+    color: white;
+    width: 14rem;
+    font-family: NabanaNormal;
+    color: white;
+}
+
+input.mb-input-busca:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #111 inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s; /* truque para evitar o flash amarelo */
+}
+
+.mb-input-busca:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* CSS DO HEADER - CARDAPIO USER - FIM */
+
+/* CSS DO MAIN - CARDAPIO USER - INICIO */
+
+/* Estilo das categorias */
+.categoria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 5rem
+}
+
+/* Estilo dos produtos */
+.tituloCate {
+    font-family: Nabana;
+    color: white;
+}
+
+.produtos {
+    margin-top: 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    color: #000000;
+    width: 60%;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+    .produtos:hover {
+        transform: scale(1.1);
+    }
+
+    /* Estilo das imagens dos produtos */
+    .produtos img {
+        width: 15rem;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+/* Estilo do container de imagens */
+.divImg {
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+
+/* Estilo do título dos itens */
+.itemTitulo {
+    width: 25rem;
+    font-family: Nabana;
+}
+
+/* Estilo da descrição */
+.descricao {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-family: NabanaNormal;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 50rem;
+}
+
+/* Estilo do preço */
+.preco {
+    margin-top: 1rem;
+    color: red;
+    font-family: Nabana;
+}
+
+/* Estilo do botão de voltar para home */
+.voltarHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+    gap: 3rem;
+    button
+
+{
+    font-family: NabanaNormal;
+}
+
+}
+
+/* Estilo das alterações */
+.alterações {
+    background-color: #fff;
+    color: #000000;
+    input
+
+{
+    color: #000000;
+}
+
+}
+
+/* Estilo do botão de voltar para home */
+.btnVoltarHome {
+    font-family: DM sans;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 5rem;
+}
+
+    /* Efeito hover no botão de voltar para home */
+    .btnVoltarHome:hover {
+        background-color: darkred;
+    }
+
+/* Estilo dos pop-ups */
+.popUps {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.alerts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.alert {
+    background-color: #000000;
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+    border-radius: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    p
+
+{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+}
+
+/* Estilo do conteúdo dos pop-ups */
+.popUp {
+    background-color: #fed83c;
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+    border-radius: 1rem;
+}
+
+    .popUp .colunn-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+.colunn-1 .titulo {
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+}
+
+.colunn-1 img {
+    width: 20rem;
+    height: 15rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.colunn-1 button {
+    background-color: #000000;
+    color: #fed83c;
+    border: none;
+    width: 20rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-family: NabanaNormal;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+    .colunn-1 button:hover {
+        transform: scale(1.1);
+    }
+
+.colunn-1 .carrinhoPopUp {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20rem;
+    height: auto;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.carrinhoPopUp .bi-cart-fill {
+    color: white;
+    font-size: 3rem;
+}
+
+.colunn-1 .descricaoPopUp {
+    max-width: 40rem;
+    font-size: 1.3rem;
+    color: #000000;
+}
+
+.colunn-1 .escolhas {
+    background-color: #000000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1rem;
+    text-align: center;
+    width: 40rem;
+    height: 10rem;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.escolhas button {
+    background-color: #fed83c;
+    color: #000000;
+    border: none;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-family: NabanaNormal;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.escolhas .botoes {
+    display: flex;
+    gap: 2rem;
+}
+
+.botoes .inputQuantidade {
+    background-color: #fed83c;
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+.adicionaisList {
+    margin-top: 1rem;
+    text-align: center;
+    max-width: 40rem;
+    font-size: 1.5rem;
+}
+
+    .adicionaisList .adicionaisOptions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Define duas colunas com tamanho igual */
+        gap: 1rem; /* Espaçamento entre os itens */
+        justify-content: center;
+        max-width: 100%;
+    }
+
+.adicionaisOptions img {
+    height: 8rem; /* Ajuste para caber no espaço disponível */
+    width: 8rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.adicionaisOptions .inputQuantidadeAdicional {
+    background-color: #000000;
+    width: 8rem;
+    text-align: center;
+}
+
+.btnAdicionaisEnviarPopUp {
+    margin-top: 2rem;
+}
+
+.popUpBtn:hover button {
+    cursor: pointer;
+}
+
+/* Estilo do título dos pop-ups */
+.popUp h1 {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+}
+
+/* CSS DO MAIN - CARDAPIO USER - FIM */
+
 /* CSS RESPONSIVO - INICIO */
 
 @media (max-width: 1400px) {
     header {
         height: 6rem;
+    }
+
+    main {
+        flex: 1 0 auto; /* Ocupa o espaço restante */
+        min-height: 56vh;
     }
 
     .mb-header-logo {

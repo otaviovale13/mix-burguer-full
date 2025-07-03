@@ -12,13 +12,13 @@
         <h1 class="text-mix-burguer">MIX BURGUER</h1>
         <h1 class="text-mix">BURGER <br /> DE VERDADE</h1>
         <h1 class="text-chega">Chega rapidinho para matar sua fome!</h1>
-        <button class="btn-menu" onclick="btnCardapio()">Fazer Pedido</button>
+        <a asp-controller="Cardapio" asp-action="Cardapio" class="btn-menu">Fazer Pedido</a>
     </div>
 </div>
 
 <!-- Barra com logo -->
 <div class="bar bg-mix d-flex justify-content-center position-relative py-5">
-    <img class="slash-logo position-absolute top-50 start-50 translate-middle" src="./IMGS/Logo.png" alt="Logo" />
+    <img class="slash-logo position-absolute top-50 start-50 translate-middle" src="~/IMGS/Logo.png" alt="Logo" />
 </div>
 
 <!-- Seção "Quem Somos" -->
@@ -26,7 +26,7 @@
     <div class="container position-relative z-1">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <img class="img-fluid rounded photo" src="./IMGS/b29db971-6900-4316-813c-44d05d1df442.jpeg" alt="Foto da hamburgueria" />
+                <img class="img-fluid rounded photo" src="~/IMGS/b29db971-6900-4316-813c-44d05d1df442.jpeg" alt="Foto da hamburgueria" />
             </div>
             <div class="conatiner-we-are col-lg-6">
                 <div class="text-who p-5 rounded-5 bg-black bg-opacity-75 text-start">

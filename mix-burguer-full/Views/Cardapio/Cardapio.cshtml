@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Cardápio Page";
+}
+
+@{
+    ViewData["LayoutType"] = "C";
+}
+
+<div id="categorias"></div>
+<div class="popUps"></div>
+<div class="alerts"></div>
+<div id="mensagem" class="mensagem">
+    <div class="divMensagem">
+        <h1 class="textMensagem">Nenhum Item encontrado!!!</h1>
+    </div>
+</div>
+<div class="voltarHome">
+    <a asp-controller="Home" asp-action="Index" class="btn-menu">Voltar para o Início</a>
+    <button class="btn-menu" onclick="voltarPedido()">Escolher outra forma de Pedir</button>
+</div>
