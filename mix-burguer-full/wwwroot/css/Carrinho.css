@@ -565,3 +565,22 @@ h1 {
 
 }
 }
+.bg-mix-yellow {
+    background: #ffe066 !important;
+}
+
+.btn-mix-yellow {
+    background: #fed83c !important;
+    color: #111 !important;
+    border: none;
+}
+
+    .btn-mix-yellow:hover, .btnCardapio.btn:hover {
+        background: #ffd000 !important;
+        color: #fff !important;
+    }
+
+.modal-content.bg-mix-yellow {
+    border-radius: 1rem;
+    box-shadow: 0 0 32px #fed83c55;
+}

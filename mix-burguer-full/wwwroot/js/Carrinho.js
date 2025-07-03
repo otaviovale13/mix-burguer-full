@@ -153,7 +153,7 @@ function atualizarFormaEntrega() {
     }
     copiarValorTotal(descontoAplicado); // Atualiza o valor total ao mudar a forma de entrega
 }
-
+//Saporra aqui é pra buscar o endereço pelo CEP
 function buscarEndereco() {
     const cep = document.getElementById('cep').value.replace(/\D/g, '');
     if (cep.length === 8) {
@@ -162,7 +162,7 @@ function buscarEndereco() {
             .then(data => {
                 if (!data.erro) {
                     document.getElementById('rua').value = data.logradouro || '';
-                    // Você pode adicionar mais campos se quiser (bairro, cidade, etc)
+                   
                 } else {
                     document.getElementById('rua').value = '';
                 }
