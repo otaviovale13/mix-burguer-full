@@ -8,5 +8,10 @@ namespace mix_burguer_full.Controllers
         {
             return View();
         }
+
+        public IActionResult AdmCardapio()
+        {
+            return View();
+        }
     }
 }

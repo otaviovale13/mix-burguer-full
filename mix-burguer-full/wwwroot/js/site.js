@@ -245,6 +245,8 @@ function esconder() {
 
 // JS DA HOME - ADM - FIM
 
+// JS DO CARDAPIO - USER - INICIO
+
 let Categorias = {
     Destaques: [
         {
@@ -967,4 +969,4 @@ function btnSacola() {
     window.location.href = "./carrinho.html"
 }
 
-// JS DO CARDAPIO - USER - INICIO
+// JS DO CARDAPIO - USER - FIM

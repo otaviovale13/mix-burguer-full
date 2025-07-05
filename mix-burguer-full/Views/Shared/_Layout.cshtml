@@ -72,6 +72,27 @@
             </div>
         </header>
     }
+    @if (layoutType == "D")
+    {
+        <header class="sticky-top bg-mix shadow-sm py-4 px-5 d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-4 position-relative header-mix">
+                <a asp-controller="Home" asp-action="Index">
+                    <img src="~/IMGS/Logo.png" alt="Logo" class="mb-header-logo" />
+                </a>
+                <div class="ms-text-mix">
+                    <h1 class="title h2 fw-bold text-dark">Mix Burguer</h1>
+                    <h2 class="caption h5 fw-semibold text-dark mt-n2">Hamburgueria</h2>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <div class="mb-busca d-flex align-items-center px-2 py-1 rounded gap-3">
+                    <i class="bi bi-search me-2 text-white"></i>
+                    <input id="inputBuscar" onkeyup="buscarLanche()" type="text" class="border-0 shadow-none mb-input-busca" placeholder="Pesquise seu lanche...">
+                </div>
+                <i class="bi bi-person-fill mb-icon-person" onclick="btnPerfil()"></i>
+            </div>
+        </header>
+    }
     <div>
         <main role="main">
             @RenderBody()
@@ -201,10 +222,50 @@
             </div>
         </footer>
     }
+    else if (layoutType == "D")
+    {
+        <footer class="mt-5">
+            <div class="py-4 px-5 bg-mix text-dark d-flex justify-content-between align-items-end gap-4 footer-mix">
+                <div class="mb-footer-left">
+                    <a href="https://wa.me/+5511933878825" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
+                    <span>Mix Burguer 2021 - Todos os Direitos Reservados</span><br />
+                    <span>Privacidade</span>
+                </div>
+
+                <div>
+                    <button onclick="irSugestão()" class="btn mb-footer-btn">Ver Sugestões</button>
+                </div>
+
+                <div class="gap-5 btn-icons">
+                    <a href="https://www.facebook.com/people/Mix-Burguer/100088986305599/" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
+                    <a href="https://wa.me/+5511933878825" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/mixburguer_itupeva/" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
+                </div>
+
+                <div class="mb-footer-right text-end">
+                    <span>Site feito por:</span>
+                    <div class="mt-2">
+                        <a class="linkedin d-inline-block me-3" href="https://www.linkedin.com/in/ot%C3%A1vio-augusto-palermo-do-vale-161b32351" target="_blank">
+                            Otávio Vale <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a class="linkedin d-inline-block" href="https://www.linkedin.com/in/matheus-borborema-44bb39351/" target="_blank">
+                            Matheus Borborema <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        Mikael Amaral <i class="bi bi-linkedin"></i>
+                        Samuel Theodore <i class="bi bi-linkedin"></i>
+                        <a class="linkedin d-inline-block" href="https://www.linkedin.com/in/bryan-felipe-27a7ba356" target="_blank">
+                            Bryan Felipe <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    }
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

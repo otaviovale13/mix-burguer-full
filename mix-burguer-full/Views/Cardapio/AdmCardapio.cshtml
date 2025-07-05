@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Cardápio Adm Page";
+}
+
+@{
+    ViewData["LayoutType"] = "D";
+}
+
+<div class="btnsModis">
+    <button class="btn-menu" onclick="adicionarCate()">Adicionar Categoria</button>
+    <button class="btn-menu" onclick="removerCate()">Remover Categoria</button>
+    <button class="btn-menu" onclick="editarCate()">Editar Categoria</button>
+</div>
+<div class="alerts"></div>
+<div id="categorias"></div>
+<div class="popUpsAdicionar"></div>
+<div class="popUps"></div>
+<div id="mensagem" class="mensagem">
+    <div class="divMensagem">
+        <h1 class="textMensagem">Nenhum Item encontrado!!!</h1>
+    </div>
+</div>
+<div class="voltarHome">
+    <a asp-controller="Home" asp-action="AdmIndex" class="btn-menu">Voltar para o Início</a>
+</div>
+
+<script src="~/js/AdmSite.js" asp-append-version="true"></script>
