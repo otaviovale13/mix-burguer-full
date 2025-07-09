@@ -1,6 +1,11 @@
 ﻿@{
     var layoutType = ViewData["LayoutType"]?.ToString() ?? "Default";
 }
+
+@{
+    var usuario = ViewBag.Usuario as mix_burguer_full.Models.Usuario;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +109,7 @@
         <footer class="mt-5">
             <div class="py-4 px-5 bg-mix text-dark d-flex justify-content-between align-items-end gap-4 footer-mix">
                 <div class="mb-footer-left">
-                    <a href="https://wa.me/+5511933878825" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
+                    <a href="@usuario?.WhatsappLink" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
                     <span>Mix Burguer 2021 - Todos os Direitos Reservados</span><br />
                     <span>Privacidade</span>
                 </div>
@@ -114,9 +119,9 @@
                 </div>
 
                 <div class="gap-5 btn-icons">
-                    <a href="https://www.facebook.com/people/Mix-Burguer/100088986305599/" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
-                    <a href="https://wa.me/+5511933878825" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/mixburguer_itupeva/" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
+                    <a href="@usuario?.FacebookLink" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
+                    <a href="@usuario?.WhatsappLink" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
+                    <a href="@usuario?.InstagramLink" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
                 </div>
 
                 <div class="mb-footer-right text-end">
@@ -145,7 +150,7 @@
         <footer class="mt-5">
             <div class="py-4 px-5 bg-mix text-dark d-flex justify-content-between align-items-end gap-4 footer-mix">
                 <div class="mb-footer-left">
-                    <a href="https://wa.me/+5511933878825" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
+                    <a href="@usuario?.WhatsappLink" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
                     <span>Mix Burguer 2021 - Todos os Direitos Reservados</span><br />
                     <span>Privacidade</span>
                 </div>
@@ -155,9 +160,9 @@
                 </div>
 
                 <div class="gap-5 btn-icons">
-                    <a href="https://www.facebook.com/people/Mix-Burguer/100088986305599/" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
-                    <a href="https://wa.me/+5511933878825" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/mixburguer_itupeva/" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
+                    <a href="@usuario?.FacebookLink" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
+                    <a href="@usuario?.WhatsappLink" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
+                    <a href="@usuario?.InstagramLink" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
                 </div>
 
                 <div class="mb-footer-right text-end">
@@ -186,7 +191,7 @@
         <footer class="mt-5">
             <div class="py-4 px-5 bg-mix text-dark d-flex justify-content-between align-items-end gap-4 footer-mix">
                 <div class="mb-footer-left">
-                    <a href="https://wa.me/+5511933878825" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
+                    <a href="@usuario?.WhatsappLink" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
                     <span>Mix Burguer 2021 - Todos os Direitos Reservados</span><br />
                     <span>Privacidade</span>
                 </div>
@@ -196,9 +201,9 @@
                 </div>
 
                 <div class="gap-5 btn-icons">
-                    <a href="https://www.facebook.com/people/Mix-Burguer/100088986305599/" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
-                    <a href="https://wa.me/+5511933878825" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/mixburguer_itupeva/" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
+                    <a href="@usuario?.FacebookLink" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
+                    <a href="@usuario?.WhatsappLink" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
+                    <a href="@usuario?.InstagramLink" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
                 </div>
 
                 <div class="mb-footer-right text-end">
@@ -227,7 +232,7 @@
         <footer class="mt-5">
             <div class="py-4 px-5 bg-mix text-dark d-flex justify-content-between align-items-end gap-4 footer-mix">
                 <div class="mb-footer-left">
-                    <a href="https://wa.me/+5511933878825" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
+                    <a href="@usuario?.WhatsappLink" target="_blank" class="text-decoration-none text-dark fw-semibold d-block">Trabalhe Conosco</a>
                     <span>Mix Burguer 2021 - Todos os Direitos Reservados</span><br />
                     <span>Privacidade</span>
                 </div>
@@ -237,9 +242,9 @@
                 </div>
 
                 <div class="gap-5 btn-icons">
-                    <a href="https://www.facebook.com/people/Mix-Burguer/100088986305599/" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
-                    <a href="https://wa.me/+5511933878825" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/mixburguer_itupeva/" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
+                    <a href="@usuario?.FacebookLink" target="_blank" class="iconsFooter"><i class="bi bi-facebook"></i></a>
+                    <a href="@usuario?.WhatsappLink" target="_blank" class="iconsFooter"><i class="bi bi-whatsapp"></i></a>
+                    <a href="@usuario?.InstagramLink" target="_blank" class="iconsFooter"><i class="bi bi-instagram"></i></a>
                 </div>
 
                 <div class="mb-footer-right text-end">
@@ -266,6 +271,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

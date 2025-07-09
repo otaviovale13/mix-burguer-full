@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using mix_burguer_full.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Adiciona o DBContext como um serviço da aplicação.
+builder.Services.AddDbContext<DBContext>(options => // Configura o Entity Framework para usar SQL Server como provedor de banco de dados.
+    options.UseSqlServer(builder.Configuration.GetConnectionString("strConn"))); // Pega a string de conexão chamada "strConn" do arquivo appsettings.json.
 
 var app = builder.Build();
 
@@ -24,7 +31,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Cardapio}/{action=AdmCardapio}/{id?}")
+    pattern: "{controller=Cardapio}/{action=Cardapio}/{id?}")
     .WithStaticAssets();
 
 
