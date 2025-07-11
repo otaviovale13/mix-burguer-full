@@ -31,7 +31,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Cardapio}/{action=Cardapio}/{id?}")
+    pattern: "{controller=Home}/{action=AdmIndex}/{id?}")
     .WithStaticAssets();
 
 

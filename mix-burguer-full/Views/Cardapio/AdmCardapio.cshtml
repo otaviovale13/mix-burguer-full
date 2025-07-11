@@ -1,10 +1,27 @@
-﻿@{
-    ViewData["Title"] = "Cardápio Adm Page";
-}
+﻿@model mix_burguer_full.Models.ViewModels.CardapioViewModel
+
+@using System.Text.Json
 
 @{
+    ViewData["Title"] = "Adm Cardápio Page";
     ViewData["LayoutType"] = "D";
+    var imagens = new Dictionary<string, string>
+    {
+        ["Combo Casal"] = "https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2FLUGWlenr9ACZhRV86ec1_900x900.webp?alt=media&token=7b4acc66-64f5-4bd0-86d5-bb82b0350f38",
+        ["Combo Família"] = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ZzTc6D3nHxSlyt6PMJY6V_CHolPuGPfnXA&s",
+        ["Mix"] = "https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2FsQOGG266owKD412TDneW_900x900.webp?alt=media&token=0482d83c-d900-454a-b486-98abb3eae5f9",
+        ["Classic"] = "https://firebasestorage.googleapis.com/v0/b/brendi-app.appspot.com/o/public%2Fstores%2FliDYZPGpWDhaJHW0sWIk%2Fimages%2Fproducts%2Fresized%2F6D3H0y7gvVbjla1lTWJ1_900x900.webp?alt=media&token=94da58c9-07f1-456e-8c9a-bb124c83e0ac",
+    };
 }
+
+@functions {
+    public static string EscapeJsString(string s)
+    {
+        if (string.IsNullOrEmpty(s)) return "";
+        return s.Replace("\\", "\\\\").Replace("'", "\\'").Replace("\"", "\\\"");
+    }
+}
+
 
 <div class="btnsModis">
     <button class="btn-menu" onclick="adicionarCate()">Adicionar Categoria</button>
@@ -12,8 +29,93 @@
     <button class="btn-menu" onclick="editarCate()">Editar Categoria</button>
 </div>
 <div class="alerts"></div>
-<div id="categorias"></div>
-<div class="popUpsAdicionar"></div>
+<div id="categorias">
+
+    @* 🔥 DESTAQUES PRIMEIRO *@
+    @if (Model.Destaques != null && Model.Destaques.Any())
+    {
+        <div id="destaques" class="categoria">
+            <h1 class="tituloCate">Destaques</h1>
+
+            @foreach (var item in Model.Destaques)
+            {
+                var imagem = imagens.ContainsKey(item.Nome) ? imagens[item.Nome] : "https://via.placeholder.com/150";
+
+                <div class="produtos"
+                     onclick='popUp(
+                         @Html.Raw(JsonSerializer.Serialize(item.Nome)),
+                         @Html.Raw(JsonSerializer.Serialize(item.Descricao)),
+                         @Html.Raw(JsonSerializer.Serialize(item.Preco)),
+                         @Html.Raw(JsonSerializer.Serialize(imagem))
+                     )'>
+
+                    <div>
+                        <h2 class="itemTitulo">@item.Nome</h2>
+                        <h3 class="descricao">@item.Descricao</h3>
+                        <h2 class="preco">@item.Preco</h2>
+                    </div>
+                    <div class="divImg">
+                        <img src="@imagem" alt="@item.Nome" />
+                    </div>
+                </div>
+
+                <div id="btnsRemoveEEdit" class="btnsRemoveEEdit">
+                    <button class="btn-menu"
+                            onclick="removerItemDestaques('Destaques', '@EscapeJsString(item.Nome)')">
+                        Remover dos Destaques
+                    </button>
+                    <button class="btn-menu" onclick="adicionarProdutoDestaque('Destaques')">Adicionar aos Destaques</button>
+                </div>
+            }
+        </div>
+    }
+
+    @* 🧾 CATEGORIAS ABAIXO *@
+    @foreach (var categoria in Model.Categorias)
+    {
+        <div class="categoria">
+            <h1 class="tituloCate">@categoria.Nome</h1>
+
+            @foreach (var item in categoria.Produtos)
+            {
+                var imagem = imagens.ContainsKey(item.Nome) ? imagens[item.Nome] : "https://via.placeholder.com/150";
+
+                <div class="produtos" onclick="popUp('@item.Nome', '@item.Descricao', '@item.Preco', '@imagem')">
+                    <div>
+                        <h2 class="itemTitulo">@item.Nome</h2>
+                        <h3 class="descricao">@item.Descricao</h3>
+                        <h2 class="preco">@item.Preco</h2>
+                    </div>
+                    <div class="divImg">
+                        <img src="@imagem" alt="@item.Nome" />
+                    </div>
+                </div>
+
+                <div id="btnsRemoveEEdit" class="btnsRemoveEEdit">
+                    <button class="btn-menu"
+                            onclick="removerItem(@JsonSerializer.Serialize(categoria.Nome), @JsonSerializer.Serialize(item.Nome))">
+                        Remover
+                    </button>
+
+                    <button class="btn-menu"
+                            onclick="editarItem(
+                        @JsonSerializer.Serialize(categoria.Nome),
+                        @JsonSerializer.Serialize(item.Nome),
+                        @JsonSerializer.Serialize(item.Descricao),
+                        @JsonSerializer.Serialize(item.Preco),
+                        @item.Id
+                    )">
+                        Editar
+                    </button>
+                </div>
+            }
+            <div class="btnsModis">
+                <button class="btn-menu" onclick="adicionarProduto('@categoria.Nome')">Adicionar Produto</button>
+            </div>
+        </div>
+    }
+</div>
+<div id="popUpsAdicionar" class="popUpsAdicionar"></div>
 <div class="popUps"></div>
 <div id="mensagem" class="mensagem">
     <div class="divMensagem">
@@ -25,3 +127,7 @@
 </div>
 
 <script src="~/js/AdmSite.js" asp-append-version="true"></script>
+
+<script>
+    const categoriasExistentes = @Html.Raw(JsonSerializer.Serialize(Model.Categorias.Select(c => c.Nome)));
+</script>

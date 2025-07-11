@@ -6,9 +6,12 @@ namespace mix_burguer_full.Models
     [Table("DESTAQUES")]
     public class Destaque
     {
-        [Key]
         public int Id { get; set; }
 
-        public ICollection<Produto> Produtos { get; set; }
+        public int IdProduto { get; set; }
+
+        [ForeignKey("IdProduto")]
+        public Produto Produto { get; set; }
+
     }
 }

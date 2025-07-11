@@ -7,6 +7,17 @@ namespace mix_burguer_full.Data
     {
         public DBContext(DbContextOptions options) : base(options) { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Destaque>()
+                .HasOne(d => d.Produto)
+                .WithMany() // ou .WithMany(p => p.Destaques) se quiser coleção
+                .HasForeignKey(d => d.IdProduto)
+                .OnDelete(DeleteBehavior.Cascade); // opcional
+        }
+
         public DbSet<Usuario> Usuarios { get; set; }
 
         public DbSet<Categoria> Categorias { get; set; }

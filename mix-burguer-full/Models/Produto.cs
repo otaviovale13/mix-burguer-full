@@ -22,10 +22,5 @@ namespace mix_burguer_full.Models
 
         [ForeignKey("IdCategoria")]
         public Categoria Categoria { get; set; }
-
-        public int? IdDestaque { get; set; }
-
-        [ForeignKey("IdDestaque")]
-        public Destaque Destaque { get; set; }
     }
 }
