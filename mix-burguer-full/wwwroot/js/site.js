@@ -778,11 +778,35 @@ function btnSacola() {
 
 // JS DO CARDAPIO - USER - FIM
 
+function exibirAlerta(mensagem, titulo) {
+    return new Promise((resolve) => {
+        const alerts = document.querySelector(".alerts");
+        alerts.innerHTML = "";
+
+        const alert = document.createElement("div");
+        alert.className = "alert";
+        alert.innerHTML = `
+            <h1>${titulo}</h1>
+            <p>${mensagem}</p>
+            <button class="btn-menu">Ok</button>
+        `;
+
+        alerts.appendChild(alert);
+        alerts.style.display = "flex";
+
+        alert.querySelector("button").addEventListener("click", () => {
+            alerts.style.display = "none";
+            alerts.innerHTML = "";
+            resolve();
+        });
+    });
+}
+
 async function enviarSugestao() {
     const texto = document.getElementById('cxText').value.trim();
 
     if (!texto) {
-        alert("⚠️ Por favor, escreva algo.");
+        await exibirAlerta("Por favor, escreva algo!", "Erro!");
         return;
     }
 
@@ -798,14 +822,14 @@ async function enviarSugestao() {
         const data = await response.json();
 
         if (response.ok) {
-            alert("✅ " + data.message);
+            await exibirAlerta(data.message, "Sucesso!");
             document.getElementById('cxText').value = "";
         } else {
-            alert("❌ Erro: " + (data.message || "Não foi possível enviar a sugestão."));
+            await exibirAlerta(data.message || "Não foi possível enviar a sugestão.", "Erro!");
         }
 
     } catch (error) {
-        alert("❌ Erro na conexão com o servidor.");
+        await exibirAlerta("Erro na conexão com o servidor.", "Erro!");
         console.error(error);
     }
 }

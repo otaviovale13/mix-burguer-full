@@ -16,6 +16,12 @@ namespace mix_burguer_full.Data
                 .WithMany() // ou .WithMany(p => p.Destaques) se quiser coleção
                 .HasForeignKey(d => d.IdProduto)
                 .OnDelete(DeleteBehavior.Cascade); // opcional
+
+            modelBuilder.Entity<Sugestao>()
+                .HasOne(s => s.Usuario)
+                .WithMany()
+                .HasForeignKey(s => s.IdUsuario) // <- isso resolve o problema!
+                .OnDelete(DeleteBehavior.Cascade);
         }
 
         public DbSet<Usuario> Usuarios { get; set; }

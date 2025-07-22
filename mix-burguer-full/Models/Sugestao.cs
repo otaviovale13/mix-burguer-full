@@ -12,5 +12,7 @@ namespace mix_burguer_full.Models
         [Required]
         [StringLength(150)]
         public string Descricao { get; set; }
+
+        public Usuario Usuario { get; set; }
     }
 }

@@ -1169,9 +1169,57 @@ input.mb-input-busca:-webkit-autofill {
 
 .sugestao-caixaTexto:focus {
     background-color: rgba(0, 0, 0, 0.6);
+    color: white;
 }
 
 /* CSS DO MAIN - SUGESTAO USER - FIM */
+
+.pai-sugestao {
+    background: url(/IMGS/fundoCarrinho.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: auto;
+    padding-top: 10rem;
+}
+
+.sug-box {
+    background-color: white;
+    padding: 2rem;
+    height: 250px;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sug-img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sug-text {
+    background-color: #fed83c;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    height: 10rem;
+    overflow-y: auto;
+}
+
+.sug-btn {
+    max-width: 25rem;
+    font-family: NabanaNormal;
+    transition: transform 0.6s ease;
+    background-color: #fed83c;
+    margin-bottom: 5rem;
+}
+
+    .sug-btn:hover {
+        transform: scale(1.1);
+        background-color: #fed83c;
+    }
+
 
 /* CSS RESPONSIVO - INICIO */
 

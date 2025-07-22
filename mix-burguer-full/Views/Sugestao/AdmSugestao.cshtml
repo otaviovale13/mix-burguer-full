@@ -1,5 +1,29 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<mix_burguer_full.Models.Sugestao>
+
 @{
+    ViewData["Title"] = "Adm Sugestões Page";
+    ViewData["LayoutType"] = "F";
 }
+
+<div class="d-flex flex-column align-items-center gap-5 pai-sugestao">
+    <div class="row justify-content-center w-100 gap-5">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6 col-lg-4 sug-box mb-5">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <img src="https://th.bing.com/th/id/R.b6431f8fc77caadf930b67c5482fadc3?rik=oVdLl781wJaqWA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fwc1676841.jpg&ehk=ib%2b1G9Vom%2bpq49pUHAgQnrCuXNWbSlW9h77R9YRWBO4%3d&risl=&pid=ImgRaw&r=0" alt="" class="sug-img">
+                    <h1 class="fs-5 m-0">
+                        @(item.Usuario?.Nome ?? "Usuário Desconhecido")
+                    </h1>
+                </div>
+                <div class="sug-text">
+                    <p class="m-0">@item.Descricao</p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="text-center">
+        <a asp-controller="Home" asp-action="AdmIndex" class="btn btn-lg w-100 sug-btn">Voltar para o Início</a>
+    </div>
+</div>
