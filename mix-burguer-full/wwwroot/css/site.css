@@ -135,6 +135,7 @@ footer {
     transition: transform 0.6s ease;
     font-family: Nabana;
     text-align: center;
+    text-decoration: none;
 }
 
     .mb-footer-btn:hover {
@@ -1123,105 +1124,154 @@ input.mb-input-busca:-webkit-autofill {
 
 /* CSS DO MAIN - CARDAPIO ADM - FIM */
 
+/* CSS DO MAIN - SUGESTAO USER - INICIO */
+
+.sugestao-main {
+    width: 100%;
+    height: 86.7vh;
+    font-family: Nabana;
+    background: url(https://moinhoglobo.com.br/wp-content/uploads/2019/05/16-hamburguer.jpeg) no-repeat center center/cover;
+}
+
+.sugestao-text1 {
+    margin-top: 2.5rem;
+    font-family: Nabana;
+}
+
+.sugestao-caixaTexto {
+    width: 40rem;
+    height: 25rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-family: Nabana;
+    resize: none;
+}
+
+.sugestao-btnCardapio {
+    width: 25rem;
+    height: 3rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-family: NabanaNormal;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background-color: #fed83c;
+}
+
+    .sugestao-btnCardapio:hover {
+        transform: scale(1.1);
+        background-color: #fed83c;
+    }
+
+.sugestao-caixaTexto:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* CSS DO MAIN - SUGESTAO USER - FIM */
+
 /* CSS RESPONSIVO - INICIO */
 
-@media (max-width: 1400px) {
-    header {
-        height: 6rem;
-    }
+    @media (max-width: 1400px) {
+        header {
+            height: 6rem;
+        }
 
-    main {
-        flex: 1 0 auto; /* Ocupa o espaço restante */
-        min-height: 56vh;
-    }
+        main {
+            flex: 1 0 auto; /* Ocupa o espaço restante */
+            min-height: 56vh;
+        }
 
-    .mb-header-logo {
-        width: 9rem;
-        left: 5%;
-        margin-top: 1rem;
-    }
+        .mb-header-logo {
+            width: 9rem;
+            left: 5%;
+            margin-top: 1rem;
+        }
 
-    .ms-text-mix {
-        font-size: 0.8rem;
-        margin-left: 10rem;
-        gap: 0;
-    }
+        .ms-text-mix {
+            font-size: 0.8rem;
+            margin-left: 10rem;
+            gap: 0;
+        }
 
-    .title {
-        font-size: 1.5rem;
-    }
+        .title {
+            font-size: 1.5rem;
+        }
 
-    .caption{
-        font-size: 1rem;
-    }
+        .caption {
+            font-size: 1rem;
+        }
 
-    .bi-person-fill {
-        font-size: 2.7rem;
-    }
+        .bi-person-fill {
+            font-size: 2.7rem;
+        }
 
-    .bi-bag-fill {
-        font-size: 2.1rem;
-    }
+        .bi-bag-fill {
+            font-size: 2.1rem;
+        }
 
-    .text-mix {
-        font-size: 1.5rem;
-    }
+        .text-mix {
+            font-size: 1.5rem;
+        }
 
-    .container-dad {
-        height: 74vh;
-    }
+        .container-dad {
+            height: 74vh;
+        }
 
-    .text-mix-burguer {
-        font-size: 1.5rem;
-    }
+        .text-mix-burguer {
+            font-size: 1.5rem;
+        }
 
-    .text-chega {
-        font-size: 1.5rem;
-    }
+        .text-chega {
+            font-size: 1.5rem;
+        }
 
-    .bar {
-        height: 6rem;
-    }
+        .bar {
+            height: 6rem;
+        }
 
-    .slash-logo {
-        width: 7rem;
-    }
+        .slash-logo {
+            width: 7rem;
+        }
 
-    .photo {
-        width: 20rem;
-        height: 20rem;
-    }
+        .photo {
+            width: 20rem;
+            height: 20rem;
+        }
 
-    .text-biografia {
-        font-size: 1rem;
-    }
+        .text-biografia {
+            font-size: 1rem;
+        }
 
-    .who-we-are {
-        margin-bottom: 0rem;
-        font-size: 1.5rem;
-    }
+        .who-we-are {
+            margin-bottom: 0rem;
+            font-size: 1.5rem;
+        }
 
-    .btn-menu {
-        width: 15rem;
-        height: 2rem;
-        font-size: 1rem;
-    }
+        .btn-menu {
+            width: 15rem;
+            height: 2rem;
+            font-size: 1rem;
+        }
 
-    .btnCardapioA {
-        width: 15rem;
-        height: 2rem;
-        font-size: 1rem;
-    }
+        .btnCardapioA {
+            width: 15rem;
+            height: 2rem;
+            font-size: 1rem;
+        }
 
-    .more-imgs-videos {
-        width: 10rem;
-        height: 10rem;
-    }
+        .more-imgs-videos {
+            width: 10rem;
+            height: 10rem;
+        }
 
-    .more-videos1 {
-        width: 10rem;
-        height: 10rem;
-        i
+        .more-videos1 {
+            width: 10rem;
+            height: 10rem;
+            i
 
 {
     font-size: 4rem;

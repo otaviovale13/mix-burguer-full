@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Sugestões Page";
+    ViewData["LayoutType"] = "E";
+}
+
+<div class="container-fluid sugestao-main">
+    <div class="d-flex flex-column justify-content-center align-items-center sugestao-pai1">
+        <h1 class="text-center text-white display-4 sugestao-text1">Coloque sua Sugestão</h1>
+
+        <div class="w-100 d-flex justify-content-center mt-3 sugestao-cx">
+            <textarea id="cxText"
+                      class="form-control sugestao-caixaTexto"
+                      placeholder="Escreva sua mensagem..."></textarea>
+        </div>
+
+        <div class="d-flex justify-content-center gap-4 mt-3 sugestao-butao">
+            <button onclick="btn()" class="btn sugestao-btnCardapio">Enviar!</button>
+            <button onclick="voltarHome()" class="btn sugestao-btnCardapio">Voltar</button>
+        </div>
+    </div>
+</div>
