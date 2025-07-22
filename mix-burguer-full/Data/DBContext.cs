@@ -23,5 +23,7 @@ namespace mix_burguer_full.Data
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Destaque> Destaques { get; set; }
+        public DbSet<Sugestao> Sugestoes { get; set; }
+
     }
 }

@@ -777,3 +777,35 @@ function btnSacola() {
 }
 
 // JS DO CARDAPIO - USER - FIM
+
+async function enviarSugestao() {
+    const texto = document.getElementById('cxText').value.trim();
+
+    if (!texto) {
+        alert("⚠️ Por favor, escreva algo.");
+        return;
+    }
+
+    try {
+        const response = await fetch('/Sugestao/Enviar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ descricao: texto })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("✅ " + data.message);
+            document.getElementById('cxText').value = "";
+        } else {
+            alert("❌ Erro: " + (data.message || "Não foi possível enviar a sugestão."));
+        }
+
+    } catch (error) {
+        alert("❌ Erro na conexão com o servidor.");
+        console.error(error);
+    }
+}
